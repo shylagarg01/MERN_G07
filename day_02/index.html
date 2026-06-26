@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi</title>
+    <style>
+        body{
+            text-align: center;
+            align-content: center;
+            height: 100vh;
+            /* background-color: #faa8a8; */
+        }
+        h3 {
+            color: green;
+        }
+        button{
+            width: 200px;
+            padding: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+ <h1>DOM 1</h1>
+ <h3>welcome to my webpage</h3>
+
+ <button id="btn">Click Me</button>
+ <button id="exitBtn">Exit</button>
+
+</body>
+</html>
+
+<script>
+    console.log("Hello World");
+    var btn = document.getElementById("btn");
+    btn.addEventListener("click", function(){
+        changeColor();
+    })
+
+    function changeColor(){
+        var h3 = document.querySelector("h3");
+        if(h3.style.color === "green"){
+            h3.style.color = "blue";
+        } else {
+            h3.style.color = "green";
+        }
+    }
+
+    var exitBtn = document.getElementById("exitBtn");
+    exitBtn.addEventListener("click", function(){
+        changeText();
+    })
+    function changeText(){
+        var h3 = document.querySelector("h3");
+        if(h3.innerHTML === "welcome to my webpage"){
+                h3.innerHTML = "Goodbye!";
+                exitBtn.innerText = "Back";
+            } else {
+                h3.innerHTML = "welcome to my webpage";
+                exitBtn.innerText = "Exit";
+            }
+        }
+</script>
